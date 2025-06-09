@@ -1,0 +1,1775 @@
+{
+    "Safe": "CLIENTE NO INDICA",
+    "Individuo": {
+        "Nombres": "ELISAUL",
+        "Apellidos": "MORENO ",
+        "Apellidos1": "MORENO",
+        "Apellidos2": "",
+        "CedulaNueva": "22500643725",
+        "CedulaVieja": "000000000",
+        "Edad": 37,
+        "FechaNacimiento": "04-02-1988",
+        "LugarNacimiento": "VILLA MELLA, R.D",
+        "EstadoCivil": "NO ESPECIFICADO",
+        "Ocupacion": "-",
+        "Conyugue": "",
+        "CedulaConyugue": null,
+        "Sexo": "MASCULINO",
+        "Nacionalidad": "DOMINICANA",
+        "Madre": "",
+        "Padre": ""
+    },
+    "DeudasPorProducto": {
+        "Producto": [
+            {
+                "Nombre": "PRESTAMO",
+                "EstatusImg": "Cuenta Normal",
+                "EstatusImg2": "Cuenta Normal",
+                "CantidadCuentas": 2,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "150000"
+                },
+                "TotalAdeudado": "108899.0",
+                "Cuota": "6661.0",
+                "EnAtraso": "0.0",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            },
+            {
+                "Nombre": "PRODUCTO DE TELECOMUNICACIONES",
+                "EstatusImg": "Cuenta Vencida",
+                "EstatusImg2": "Cuenta Vencida",
+                "CantidadCuentas": 2,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "0"
+                },
+                "TotalAdeudado": "1212.5",
+                "Cuota": "0.0",
+                "EnAtraso": "1212.5",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            },
+            {
+                "Nombre": "CREDITO COMERCIAL",
+                "EstatusImg": "Cuenta Normal",
+                "EstatusImg2": "Cuenta Normal",
+                "CantidadCuentas": 2,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "50884"
+                },
+                "TotalAdeudado": "36607.0",
+                "Cuota": "3661.0",
+                "EnAtraso": "0.0",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            }
+        ],
+        "Total": [
+            {
+                "ID": "DO",
+                "Total_CreditoAprobado": "$200,884",
+                "Total_Adeudado": "$146,718.5",
+                "Total_Cuota": "$10,322",
+                "Total_EnAtraso": "$1,212.5",
+                "Total_EnLegal": "$0",
+                "Total_Castigado": "$0"
+            },
+            {
+                "ID": "US",
+                "Total_CreditoAprobado": "$0",
+                "Total_Adeudado": "$0",
+                "Total_Cuota": "$0",
+                "Total_EnAtraso": "$0",
+                "Total_EnLegal": "$0",
+                "Total_Castigado": "$0"
+            }
+        ]
+    },
+    "DeudasPorAcreedor": {
+        "Acreedor": [
+            {
+                "Afiliado": "BANCO DE AHORRO Y CREDITO ADOPEM",
+                "EstatusImg": "Cuenta Normal",
+                "Sector": "BDD",
+                "CantidadCuentas": 1,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "135000"
+                },
+                "TotalAdeudado": "108899.0",
+                "Cuota": "6661.0",
+                "EnAtraso": "0.0",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            },
+            {
+                "Afiliado": "PLAZA COMERCIAL ELECTROMAX VILLA, S.R.L.",
+                "EstatusImg": "Cuenta Normal",
+                "Sector": "MYE",
+                "CantidadCuentas": 1,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "43935"
+                },
+                "TotalAdeudado": "36607.0",
+                "Cuota": "3661.0",
+                "EnAtraso": "0.0",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            },
+            {
+                "Afiliado": "VIVA",
+                "EstatusImg": "Cuenta Vencida",
+                "Sector": "TEL",
+                "CantidadCuentas": 1,
+                "CreditoAprobado": {
+                    "Moneda": "DO",
+                    "content": "0"
+                },
+                "TotalAdeudado": "1212.5",
+                "Cuota": "0.0",
+                "EnAtraso": "1212.5",
+                "EnLegal": "0.0",
+                "Castigado": "0.0"
+            }
+        ],
+        "Total": [
+            {
+                "ID": "DO",
+                "Total_CreditoAprobado": "$178,935",
+                "Total_Adeudado": "$146,718.5",
+                "Total_Cuota": "$10,322",
+                "Total_EnAtraso": "$1,212.5",
+                "Total_EnLegal": "$0",
+                "Total_Castigado": "$0"
+            }
+        ]
+    },
+    "AnalisisCrediticio": {
+        "CantidadTotalCuentas": {
+            "Moneda": [
+                {
+                    "Id": "R.D. $",
+                    "Cuentas": 6,
+                    "Cerradas": 3,
+                    "Abiertas": 3,
+                    "Normal": 2,
+                    "EnAtraso": 1,
+                    "AcuerdoPago": 0,
+                    "EnLegal": 0,
+                    "Castigado": 0
+                },
+                {
+                    "Id": "U.S. $",
+                    "Cuentas": 0,
+                    "Cerradas": 0,
+                    "Abiertas": 0,
+                    "Normal": 0,
+                    "EnAtraso": 0,
+                    "AcuerdoPago": 0,
+                    "EnLegal": 0,
+                    "Castigado": 0
+                }
+            ],
+            "Totales": {
+                "Cuentas": 6,
+                "Cerradas": 3,
+                "Abiertas": 3,
+                "Normal": 2,
+                "EnAtraso": 1,
+                "AcuerdoPago": 0,
+                "EnLegal": 0,
+                "Castigado": 0
+            }
+        },
+        "AnalisisCreditos": {
+            "Moneda": [
+                {
+                    "Id": "R.D. $",
+                    "MasReciente": {
+                        "Fecha": "28-01-2025",
+                        "Anos": 0.35,
+                        "Monto": "43935"
+                    },
+                    "MasAntiguo": {
+                        "Fecha": "21-01-2022",
+                        "Anos": 3.37,
+                        "Monto": "15000"
+                    },
+                    "MenorAprobado": {
+                        "Fecha": "13-09-2024",
+                        "Anos": 0.75,
+                        "Monto": "0"
+                    },
+                    "MayorAprobado": {
+                        "Fecha": "12-09-2024",
+                        "Anos": 0.73,
+                        "Monto": "135000"
+                    },
+                    "MayorAdeudado": {
+                        "Fecha": "01-01-2024",
+                        "Anos": 1.43,
+                        "Monto": "135000.0"
+                    }
+                },
+                {
+                    "Id": "U.S. $",
+                    "MasReciente": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "Monto": "0"
+                    },
+                    "MasAntiguo": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "Monto": "0"
+                    },
+                    "MenorAprobado": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "Monto": "0"
+                    },
+                    "MayorAprobado": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "Monto": "0"
+                    },
+                    "MayorAdeudado": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "Monto": "0.0"
+                    }
+                }
+            ]
+        },
+        "AnalisisAtrasos": {
+            "Moneda": [
+                {
+                    "Id": "R.D. $",
+                    "MasReciente": {
+                        "Fecha": "04-2025",
+                        "Anos": 0.18,
+                        "DiasAtraso": 60,
+                        "Monto": "1212.5"
+                    },
+                    "MasAntiguo": {
+                        "Fecha": "04-2022",
+                        "Anos": 3.18,
+                        "DiasAtraso": 30,
+                        "Monto": "3000.0"
+                    },
+                    "MayorMontoAtraso": {
+                        "Fecha": "07-2022",
+                        "Anos": 2.93,
+                        "DiasAtraso": 90,
+                        "Monto": "7500.0"
+                    }
+                },
+                {
+                    "Id": "U.S. $",
+                    "MasReciente": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "DiasAtraso": 0,
+                        "Monto": "0.0"
+                    },
+                    "MasAntiguo": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "DiasAtraso": 0,
+                        "Monto": "0.0"
+                    },
+                    "MayorMontoAtraso": {
+                        "Fecha": "",
+                        "Anos": 0,
+                        "DiasAtraso": 0,
+                        "Monto": "0.0"
+                    }
+                }
+            ]
+        },
+        "PeorAtraso": {
+            "Moneda": [
+                {
+                    "Id": "DO",
+                    "Fecha": "07-2022",
+                    "Anos": 2.93,
+                    "DiasAtraso": 90,
+                    "CreditoAprobado": "15000",
+                    "MontoAtraso": "7500.0",
+                    "Producto": "PRESTAMO"
+                },
+                {
+                    "Id": "US",
+                    "Fecha": "",
+                    "Anos": 0,
+                    "DiasAtraso": 0,
+                    "CreditoAprobado": "0",
+                    "MontoAtraso": "0.0",
+                    "Producto": "-"
+                }
+            ]
+        },
+        "AnalisisTarjetaCredito": {
+            "AvgMandatorioCuota_DO": 0,
+            "AvgMandatorioCuota_US": 0,
+            "MayorMontoTC_DO": 0,
+            "MayorMontoTC_US": 0
+        }
+    },
+    "DesgloseCreditos": {
+        "Producto": [
+            {
+                "Id": "Tarjeta de Cr\u00e9dito",
+                "Cod": "TCR",
+                "Cuenta": [],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "Pr\u00e9stamo",
+                "Cod": "PRE",
+                "Cuenta": [
+                    {
+                        "EstatusImg": "CG",
+                        "EstatusImg2": "CG",
+                        "Estatus": {
+                            "Des_Estatus": "ACTIVO",
+                            "content": 1
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "No Definido",
+                            "content": "PRE"
+                        },
+                        "Afiliado": "BANCO DE AHORRO Y CREDITO ADOPEM",
+                        "FechaApertura": "09-2024",
+                        "FechaReportado": "05-2025",
+                        "MesConsolidado": "05-2025",
+                        "FechaUltimaTransaccion": "",
+                        "CreditoAprobado": 135000,
+                        "TotalAdeudado": 108899,
+                        "Cuota": 6661,
+                        "TotalAtraso": 0,
+                        "VecesAtraso30": 0,
+                        "VecesAtraso60": 0,
+                        "VecesAtraso90": 0,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "NORMAL",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "---00000000-"
+                    },
+                    {
+                        "EstatusImg": "CN",
+                        "EstatusImg2": "CN",
+                        "Estatus": {
+                            "Des_Estatus": "CERRADO",
+                            "content": 0
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "Microcr\u00f3dito",
+                            "content": "MIC"
+                        },
+                        "Afiliado": "INVERSIONES EL SOL ZR, S.R.L.",
+                        "FechaApertura": "01-2022",
+                        "FechaReportado": "08-2022",
+                        "MesConsolidado": "08-2022",
+                        "FechaUltimaTransaccion": "07-2022",
+                        "CreditoAprobado": 15000,
+                        "TotalAdeudado": 0,
+                        "Cuota": 0,
+                        "TotalAtraso": 0,
+                        "VecesAtraso30": 1,
+                        "VecesAtraso60": 1,
+                        "VecesAtraso90": 1,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "CANCELADA",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "------------"
+                    }
+                ],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$150,000",
+                        "Total_Adeudado": "$108,899.0",
+                        "Total_Cuota": "$6,661.0",
+                        "Total_EnAtraso": "$0.0",
+                        "Total_Vencido": "$0.0",
+                        "Total_Cant_30D": "1.0",
+                        "Total_Cant_60D": "1.0",
+                        "Total_Cant_90D": "1.0",
+                        "Total_Cant_120D": "0.0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "SERVICIOS",
+                "Cod": "SRV",
+                "Cuenta": [],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "Producto de Telecomunicaciones",
+                "Cod": "TEL",
+                "Cuenta": [
+                    {
+                        "EstatusImg": "CY",
+                        "EstatusImg2": "CY",
+                        "Estatus": {
+                            "Des_Estatus": "ACTIVO",
+                            "content": 1
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "Telecomunicaciones",
+                            "content": "TEL"
+                        },
+                        "Afiliado": "VIVA",
+                        "FechaApertura": "08-2024",
+                        "FechaReportado": "05-2025",
+                        "MesConsolidado": "04-2025",
+                        "FechaUltimaTransaccion": "",
+                        "CreditoAprobado": 0,
+                        "TotalAdeudado": 1212.5,
+                        "Cuota": 0,
+                        "TotalAtraso": 1212.5,
+                        "VecesAtraso30": 0,
+                        "VecesAtraso60": 1,
+                        "VecesAtraso90": 0,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "MORA",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "L",
+                                "content": "1"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "L",
+                                "content": "1"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "2",
+                                "content": "2"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "-000100012--"
+                    },
+                    {
+                        "EstatusImg": "CN",
+                        "EstatusImg2": "CN",
+                        "Estatus": {
+                            "Des_Estatus": "CERRADO",
+                            "content": 0
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "Telecomunicaciones",
+                            "content": "TEL"
+                        },
+                        "Afiliado": "VIVA",
+                        "FechaApertura": "08-2024",
+                        "FechaReportado": "01-2025",
+                        "MesConsolidado": "01-2024",
+                        "FechaUltimaTransaccion": "",
+                        "CreditoAprobado": 0,
+                        "TotalAdeudado": 0,
+                        "Cuota": 0,
+                        "TotalAtraso": 0,
+                        "VecesAtraso30": 1,
+                        "VecesAtraso60": 1,
+                        "VecesAtraso90": 0,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "MORA",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "L",
+                                "content": "1"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "2",
+                                "content": "2"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "1",
+                                "content": "1"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "-00121------"
+                    }
+                ],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$1,212.5",
+                        "Total_Cuota": "$0.0",
+                        "Total_EnAtraso": "$1,212.5",
+                        "Total_Vencido": "$1,212.5",
+                        "Total_Cant_30D": "1.0",
+                        "Total_Cant_60D": "2.0",
+                        "Total_Cant_90D": "0.0",
+                        "Total_Cant_120D": "0.0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "Cr\u00e9dito Comercial",
+                "Cod": "CCO",
+                "Cuenta": [
+                    {
+                        "EstatusImg": "CG",
+                        "EstatusImg2": "CG",
+                        "Estatus": {
+                            "Des_Estatus": "ACTIVO",
+                            "content": 1
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "Otros Cr\u00e9ditos",
+                            "content": "NNN"
+                        },
+                        "Afiliado": "PLAZA COMERCIAL ELECTROMAX VILLA, S.R.L.",
+                        "FechaApertura": "01-2025",
+                        "FechaReportado": "04-2025",
+                        "MesConsolidado": "04-2025",
+                        "FechaUltimaTransaccion": "03-2025",
+                        "CreditoAprobado": 43935,
+                        "TotalAdeudado": 36607,
+                        "Cuota": 3661,
+                        "TotalAtraso": 0,
+                        "VecesAtraso30": 0,
+                        "VecesAtraso60": 0,
+                        "VecesAtraso90": 0,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "NORMAL",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "-------0-0--"
+                    },
+                    {
+                        "EstatusImg": "CN",
+                        "EstatusImg2": "CN",
+                        "Estatus": {
+                            "Des_Estatus": "CERRADO",
+                            "content": 0
+                        },
+                        "Moneda": {
+                            "Des_Moneda": "R.D. $",
+                            "content": "RD"
+                        },
+                        "TipoPrestamo": {
+                            "Descr": "Otros Cr\u00e9ditos",
+                            "content": "NNN"
+                        },
+                        "Afiliado": "PLAZA COMERCIAL ELECTROMAX VILLA, S.R.L.",
+                        "FechaApertura": "09-2024",
+                        "FechaReportado": "04-2025",
+                        "MesConsolidado": "04-2025",
+                        "FechaUltimaTransaccion": "11-2024",
+                        "CreditoAprobado": 6949,
+                        "TotalAdeudado": 0,
+                        "Cuota": 0,
+                        "TotalAtraso": 0,
+                        "VecesAtraso30": 0,
+                        "VecesAtraso60": 0,
+                        "VecesAtraso90": 0,
+                        "VecesAtraso120": 0,
+                        "EstatusUltimo": "CANCELADA",
+                        "HistorialPago": {
+                            "M1": {
+                                "F": "202307",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M2": {
+                                "F": "202308",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M3": {
+                                "F": "202309",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M4": {
+                                "F": "202310",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M5": {
+                                "F": "202311",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M6": {
+                                "F": "202312",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M7": {
+                                "F": "202401",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M8": {
+                                "F": "202402",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M9": {
+                                "F": "202403",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M10": {
+                                "F": "202404",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M11": {
+                                "F": "202405",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M12": {
+                                "F": "202406",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M13": {
+                                "F": "202407",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M14": {
+                                "F": "202408",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M15": {
+                                "F": "202409",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M16": {
+                                "F": "202410",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M17": {
+                                "F": "202411",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M18": {
+                                "F": "202412",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M19": {
+                                "F": "202501",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M20": {
+                                "F": "202502",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M21": {
+                                "F": "202503",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M22": {
+                                "F": "202504",
+                                "PDV": "",
+                                "content": "0"
+                            },
+                            "M23": {
+                                "F": "202505",
+                                "PDV": "C",
+                                "content": "-"
+                            },
+                            "M24": {
+                                "F": "202506",
+                                "PDV": "C",
+                                "content": "-"
+                            }
+                        },
+                        "Vector_Ult_12M": "----0000-0--"
+                    }
+                ],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$50,884",
+                        "Total_Adeudado": "$36,607.0",
+                        "Total_Cuota": "$3,661.0",
+                        "Total_EnAtraso": "$0.0",
+                        "Total_Vencido": "$0.0",
+                        "Total_Cant_30D": "0.0",
+                        "Total_Cant_60D": "0.0",
+                        "Total_Cant_90D": "0.0",
+                        "Total_Cant_120D": "0.0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "Financiamiento de Veh\u00edculo",
+                "Cod": "FDV",
+                "Cuenta": [],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            },
+            {
+                "Id": "Pr\u00e9stamos Estudiantiles",
+                "Cod": "PES",
+                "Cuenta": [],
+                "Total": [
+                    {
+                        "monedaTotal": "RD",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    },
+                    {
+                        "monedaTotal": "US",
+                        "Total_CreditoAprobado": "$0",
+                        "Total_Adeudado": "$0",
+                        "Total_Cuota": "$0",
+                        "Total_EnAtraso": "$0",
+                        "Total_Vencido": "$0",
+                        "Total_Cant_30D": "0",
+                        "Total_Cant_60D": "0",
+                        "Total_Cant_90D": "0",
+                        "Total_Cant_120D": "0"
+                    }
+                ]
+            }
+        ],
+        "TotalGeneral": [
+            {
+                "monedaTotal": "RD",
+                "Total_CreditoAprobado": "$200,884",
+                "Total_Adeudado": "$146,718.5",
+                "Total_Cuota": "$10,322.0",
+                "Total_EnAtraso": "$1,212.5",
+                "Total_Vencido": "$1,212.5",
+                "Total_Cant_30D": "2.0",
+                "Total_Cant_60D": "3.0",
+                "Total_Cant_90D": "1.0",
+                "Total_Cant_120D": "0.0"
+            },
+            {
+                "monedaTotal": "US",
+                "Total_CreditoAprobado": "$0",
+                "Total_Adeudado": "$0",
+                "Total_Cuota": "$0",
+                "Total_EnAtraso": "$0",
+                "Total_Vencido": "$0",
+                "Total_Cant_30D": "0",
+                "Total_Cant_60D": "0",
+                "Total_Cant_90D": "0",
+                "Total_Cant_120D": "0"
+            }
+        ]
+    },
+    "Direcciones": {
+        "Dir": [
+            {
+                "Fecha": "31-05-2025",
+                "content": "C\/PUMA NO 99 SANTO DOMINGO"
+            },
+            {
+                "Fecha": "29-04-2025",
+                "content": "ENTRANDO POR EL SALON DE JOSEFINASECTOR MONO MOJAOCALLE PUMACCASA NO"
+            },
+            {
+                "Fecha": "04-06-2025",
+                "content": "C 30"
+            },
+            {
+                "Fecha": "04-06-2025",
+                "content": "PUNTA LICEY AL MEDIO"
+            },
+            {
+                "Fecha": "04-06-2025",
+                "content": "C 30 7 SE VILLA MELLA SANTO DOMINGO NORTE SD RD"
+            }
+        ]
+    },
+    "Telefonos": {
+        "Tel": [
+            {
+                "Tipo": "LINEA MOVIL",
+                "Fecha": "29-09-2015",
+                "Suscriptor": "",
+                "Direccion": "C 30",
+                "content": "8096069083"
+            },
+            {
+                "Tipo": "LINEA MOVIL",
+                "Fecha": "28-11-2014",
+                "Suscriptor": "",
+                "Direccion": "PUNTA LICEY AL MEDIO",
+                "content": "8498609563"
+            },
+            {
+                "Tipo": "LINEA MOVIL",
+                "Fecha": "15-02-2010",
+                "Suscriptor": "",
+                "Direccion": "C 30 7 SE VILLA MELLA SANTO DOMINGO NORTE SD RD",
+                "content": "8296458234"
+            },
+            {
+                "Tipo": "",
+                "Fecha": "",
+                "Suscriptor": "",
+                "Direccion": "",
+                "content": "8295726386"
+            },
+            {
+                "Tipo": "",
+                "Fecha": "",
+                "Suscriptor": "",
+                "Direccion": "",
+                "content": "8094099083"
+            },
+            {
+                "Tipo": "",
+                "Fecha": "",
+                "Suscriptor": "",
+                "Direccion": "",
+                "content": "8294335346"
+            },
+            {
+                "Tipo": "",
+                "Fecha": "",
+                "Suscriptor": "",
+                "Direccion": "",
+                "content": "8092396105"
+            }
+        ]
+    },
+    "ConsultasPreviasDetalladas": {
+        "Consulta": [
+            {
+                "FechaIndagacion": "23-05-2025",
+                "Suscriptor": "COOP. AH. Y CRED.DEL FONDO ECUM. DE PREST.DE LA RD",
+                "Oficina": "",
+                "SectorEconomico": "COOPERATIVA",
+                "Hora": "13:00:50",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "20-05-2025",
+                "Suscriptor": "COOP. AH. Y CRED.DEL FONDO ECUM. DE PREST.DE LA RD",
+                "Oficina": "",
+                "SectorEconomico": "COOPERATIVA",
+                "Hora": "13:00:58",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "28-03-2025",
+                "Suscriptor": "BANCO BHD LEON",
+                "Oficina": "",
+                "SectorEconomico": "BANCO COMERCIAL",
+                "Hora": "12:19:06",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "25-03-2025",
+                "Suscriptor": "VISION FUND REPUBLICA DOMINICANA SAS",
+                "Oficina": "",
+                "SectorEconomico": "SECTOR SERVICIOS",
+                "Hora": "15:21:43",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "17-03-2025",
+                "Suscriptor": "ASOC. POPULAR DE AHORROS Y PRESTAMOS.",
+                "Oficina": "",
+                "SectorEconomico": "BANCO COMERCIAL",
+                "Hora": "15:31:41",
+                "TipoReporte": "XC000000002",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "14-03-2025",
+                "Suscriptor": "LESMON SERVICES, S.R.L.",
+                "Oficina": "",
+                "SectorEconomico": "SECTOR SERVICIOS",
+                "Hora": "13:48:00",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "16-01-2025",
+                "Suscriptor": "VISION FUND REPUBLICA DOMINICANA SAS",
+                "Oficina": "",
+                "SectorEconomico": "SECTOR SERVICIOS",
+                "Hora": "15:45:20",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            },
+            {
+                "FechaIndagacion": "02-01-2025",
+                "Suscriptor": "VISION FUND REPUBLICA DOMINICANA SAS",
+                "Oficina": "",
+                "SectorEconomico": "SECTOR SERVICIOS",
+                "Hora": "14:29:13",
+                "TipoReporte": "SN000000007",
+                "TipoIndagacion": {
+                    "Desc": ""
+                }
+            }
+        ]
+    },
+    "ConsultasPrevias": {
+        "CPBM": [
+            {
+                "SectorEconomico": "FINANCIERO",
+                "M1": {
+                    "Desc": "Jul",
+                    "content": 0
+                },
+                "M2": {
+                    "Desc": "Ago",
+                    "content": 1
+                },
+                "M3": {
+                    "Desc": "Sep",
+                    "content": 1
+                },
+                "M4": {
+                    "Desc": "Oct",
+                    "content": 0
+                },
+                "M5": {
+                    "Desc": "Nov",
+                    "content": 0
+                },
+                "M6": {
+                    "Desc": "Dic",
+                    "content": 0
+                },
+                "M7": {
+                    "Desc": "Ene",
+                    "content": 0
+                },
+                "M8": {
+                    "Desc": "Feb",
+                    "content": 0
+                },
+                "M9": {
+                    "Desc": "Mar",
+                    "content": 2
+                },
+                "M10": {
+                    "Desc": "Abr",
+                    "content": 0
+                },
+                "M11": {
+                    "Desc": "May",
+                    "content": 2
+                },
+                "M12": {
+                    "Desc": "Jun",
+                    "content": 0
+                },
+                "M12MAS": {
+                    "Desc": "MAS DE 12 MESES",
+                    "content": 6
+                }
+            },
+            {
+                "SectorEconomico": "OTROS",
+                "M1": {
+                    "Desc": "Jul",
+                    "content": 0
+                },
+                "M2": {
+                    "Desc": "Ago",
+                    "content": 0
+                },
+                "M3": {
+                    "Desc": "Sep",
+                    "content": 0
+                },
+                "M4": {
+                    "Desc": "Oct",
+                    "content": 0
+                },
+                "M5": {
+                    "Desc": "Nov",
+                    "content": 0
+                },
+                "M6": {
+                    "Desc": "Dic",
+                    "content": 0
+                },
+                "M7": {
+                    "Desc": "Ene",
+                    "content": 2
+                },
+                "M8": {
+                    "Desc": "Feb",
+                    "content": 0
+                },
+                "M9": {
+                    "Desc": "Mar",
+                    "content": 2
+                },
+                "M10": {
+                    "Desc": "Abr",
+                    "content": 0
+                },
+                "M11": {
+                    "Desc": "May",
+                    "content": 0
+                },
+                "M12": {
+                    "Desc": "Jun",
+                    "content": 0
+                },
+                "M12MAS": {
+                    "Desc": "MAS DE 12 MESES",
+                    "content": 4
+                }
+            }
+        ]
+    },
+    "Foto": "\/9j\/4AAQSkZJRgABAQEAYABgAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wAARCABfAEkDASIAAhEBAxEB\/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL\/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6\/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL\/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6\/9oADAMBAAIRAxEAPwCdt4LFWUBVztK5z1754\/I0izF9+ySMEAsON2R+Y9jn3\/GpgikglELKchioJH0PapckgA4IHQEdK+ltI+dUolZ5vKfaXjYgc\/w5P647fn+biZAgxNE7MAV2rjuOmTyOfUdqfdX0On2rTXEojjHPuT6AdzXFX\/iq9uHePToI7SJud\/lDe317Csa2IjS+Jm1Kg6r91HZDzyse3G5gSflHTt1cAfmaVmlVS29DksANhGMZxznnp7V51Nd6icbr2d2Y5IJyAfXkYqzZeKNS06QeekV1GRg70Cuf+Bd\/xzXLHMIN2eh0ywM0rrU7kiUNt86LlwoJjIxx\/vfhj9a0xpvyKTdRNyQZMbFOOu3Jyf5e9ZOmapaavbebAQV+68bDJH+9XTopYKglaEpGiOVAygUkOAR052n6HPSqxOInCzg97mVClGV1NbGLd2kkZHlSDbjcd0ZJx0B64x7gkdKzftUv\/PFP+\/h\/wrqo3V4ybhMjJ\/1uHPyjBB4z068ZxjO4Zxj75P8Ano350YOrVquTcu3QMTGnTslEg8xlJ\/dsVUZZgRwPpnJ6dqGnCJI+xmCAlug4\/EjuD70bQxyWcdiARgj34z+RFZ2vutnoVxLGrbgqpy5OQzAHOe+D+prtqSlFOXY5qcYyko9znLiebWb5p7ncsCcRxqchR+Hc962LTS7byy8sDhhzklf1OcD8cVk6d5YtUymWB5IY\/wCew\/X1ro9PgI2shlIHTc3T9P55r5WpVc5uUmfVUqKhBRSK13plv9njwhAOcEtHjj3Jx+VZlxoq4YlWAwQCcckfjx0713ots24PmSowGBtxnHpyDx0rnL5QsjAb\/oxGB9OP8amWmqZokno0crbx3uh6itzFEdoba4Drhl7g8\/ka9Lsr1JrQICIyBlMjhyfU9Ohx6EcHGM1w1yqyQusgOAMnDYNXdNM9zbM0JkaFZgvyyjkAHPfjOR6VcZzm1Fef6HJWpxgnI7WHExwjMZBwYlZcjHQg5ycdiMkdMMDWN9tg9X\/79t\/hVSOG5F95n+kJGCuz95nHr\/F6\/WtHyof+eK\/m3+Netlymuay7fqeRjeR8t33K5mjVwjSqGPQE8msrxPJCdDnjeQKzOgGT3DAmtI7iGAZQjja4JOcfTGD19RWPr8IS1hmMwBWQKdikZyc+vIyT+dd2JlKNKVuxhhoxlVjfuc7a38doQMIf7uW4rZsvHVtFtzbJJjn5JAAKnsdMivDHOs0a3CMGVim4\/nnrjP5\/WtRdFFvpkyN5I3Sb9yqR83TI4BXHPA457YOflk4a3PqrTVrGrD4v0xrFbl41UEZwX61yuo+NNLnmkC2jqwOB8w2j8aui0VNJMcbKQWILF3XPvkc54qO40WO5061jKxHyZBIuODnjj7uMHA4OSOx5pRqKejKlCUfhOfl1S3vEfyyI2xypPb2roPCMezRScgh5pGyPrj+lU7vTCpku96Rs5LhADsRj6DtxVzw6ri1kd5FYMeNvHPf68Y5r08smva2SPKzSD9ldvY23ljix5kiJnpubGafTC0gYNGyggY+ZiP5A+lVv7Ptvb\/v0P8a96UpJ6I+fjGLWrGjp1rO8QRedo02PvJhx+B\/wqwcs2dkpJGFZd2FPvjj86ZcQtNbSpJFIRIpx8\/Q\/8BPvjHt+c1bSg49zWkuSal2MjR7jDo\/512OsTOdHhW3VZipDyR5xu46Z\/KvOrcSxDK5QcgYcdO55OfX8vz07W4vp3EccLKCAMSSPz+Z5\/AgfpXyUqTUmmfXRrJxTRtf2nN\/Za250x9wPUdOeevT+vatPTHim0eUSRNE8b5VXPJXA\/rmudnk1BI\/Kl066whwGj8xwc+wfOPQ1WOpzIWVoZ494xlicNnsM8d+3pU+y5di\/a33JdcvDh0B4A6VoaDC8GmoXPzSfN9PSuZlP2qdF8pm3c7A7Ent6\/jxzxXXwKYogoVlHZXPIH8\/z5r2cop8qcmeHnFa9ooubqN1VnwSpKSuoB4Tf\/wCy1F5N3\/z2P\/fSV7Mp2ex40YXW5AH4zU8Ucs52RxvIxH3UUk16DY+DrLSmldxHdtDCJG+0RkhvvcAZwPu9w1cp8R7t5pbbTrWSKGxVC6xwj5WO4r8wBweinP8AtfifPqZlGOsVc9Gll8pO0nY811IG3uplBDx5OdvOP89xUdpMS6r5uzPIfP61K8e2RlDKRnAz8uf546j8\/wA6UmnESZt7kbW+Yjbgfhk9PrivGqVPaScn1PXhB04pLodDcXd2sAU600iNyY8D\/CsSa481\/mJwD1qAWt0WKl4xjHPHf6kD9TVmGyaPDtNvlPqmNv055\/Spdi7yehd0iAzaiJGGEj5x6eldT5oqj4Os\/wC09U\/ssvGI5lLCZo9rIRjnOfm6ABT68YrpbnwZqkUdw9u0V4sLlD5RIY9P4fxxwT0r3MFiKSpqDdmeJjcPUdRytdGV5oxR5lUmLo+xj5bA4IZMkH8xUf2ib\/nnH\/38P+FdzqRW5wqk3sfQb28DuskkMbSJ91mQEj6GuZ8c6C+q6JHJawlri0O5I1HVT1A9TwD+HvXUtXOXNlPHqeoXNvpUkt3JNHNDdK0SZVEj\/d7928BihX7uPm9Oa+akrqzPootxd0eKPpt9NuFvFOdhKkKh+U9wfes5bK\/Z1SOAlnBICx8v1GeBz3\/WvYL3wDHqVrcLfWQ+1yG2VruO48zcodBIDuC84j3k4yS55NZt58OdVeC4jgU+S4eBVW5Ct5QVQCRgABvJUbQ3\/LVs45rBQkvM6PaRfSx5kLLUmkkjFgzOpBdfs+4gnoSMcZpYLK\/uAssdpIVYhVdIeGOcAZxzzXodn8N9WEKoEitUEg2mZUk8siOUhwmWVQHdOhJPPQVt6V4KtNGv9MdLK7uBbwQ7JXitWaNg7M24tlhjI+574JNUoN+QnUS8yXwF4PbRtNe51GAG7uUCmJ0zsTPT6k4JHsK7GOBY1CRxBFHRVXAH4VyUGhzNp1nZrpf2eKJIUukkEQFywlhJchWIbCxyZ3c\/NgZyatroiW5gmfSTcBLu5laCIxjJaRjHIQxCsQvAycjd0442SsrHPJ3dy5rfhnTtahb7RbxiX+GUINw+ueo9jXI\/8K91D\/oLD\/vg\/wCNd3o0FzBpMSXaeXMWdzH5hk8tWclU3d9qkL+HFXdtbQrzirJmM6MJO9j\/2Q=="
+}

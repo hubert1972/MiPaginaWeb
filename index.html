@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CASO ECLOF</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    #contenido {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>PARA VER LOS JSON DE EQUIFAX</h2>
+
+  <label for="seccion">Selecciona la sección a mostrar:</label>
+  <select id="seccion">
+    <option value="">-- Selecciona una sección --</option>
+    <option value="Individuo">Datos personales</option>
+    <option value="DeudasPorProducto">Deudas por producto</option>
+    <option value="DeudasPorAcreedor">Deudas por acreedor</option>
+    <option value="AnalisisCrediticio">Análisis crediticio</option>
+    <option value="DesgloseCreditos">Desglose de créditos</option>
+  </select>
+
+  <button onclick="exportarExcel()">Exportar Seccion en Pantalla a Excel</button>
+
+    <button onclick="exportarTodo()">Exportar TODO a Excel</button>
+    <button onclick="exportarPDF()">Exportar TODO a PDF</button>
+    <div id="contenido"></div>
+  <script>
+    let datosJSON = {};
+
+    // Carga del archivo JSON
+    fetch("05-06-2025-04-50-15-pm_00111774295.json")
+      .then(res => res.json())
+      .then(data => {
+        datosJSON = data;
+        document.getElementById("seccion").addEventListener("change", mostrarSeccion);
+      });
+
+    function mostrarSeccion() {
+      const seccion = document.getElementById("seccion").value;
+      const contenedor = document.getElementById("contenido");
+      contenedor.innerHTML = "";
+
+      if (!seccion) return;
+
+      let html = "";
+
+      if (seccion === "Individuo") {
+        const individuo = datosJSON.Individuo;
+        html += "<table id='tabla'><tbody>";
+        for (let clave in individuo) {
+          html += `<tr><th>${clave}</th><td>${individuo[clave] ?? ''}</td></tr>`;
+        }
+        html += "</tbody></table>";
+      }
+
+      if (seccion === "DeudasPorProducto") {
+        const productos = datosJSON.DeudasPorProducto.Producto;
+        html += "<table id='tabla'><thead><tr>";
+        html += "<th>Nombre</th><th>Moneda</th><th>Crédito Aprobado</th><th>Total Adeudado</th><th>Cuota</th><th>En Atraso</th><th>En Legal</th><th>Castigado</th>";
+        html += "</tr></thead><tbody>";
+        productos.forEach(p => {
+          html += `<tr>
+            <td>${p.Nombre}</td>
+            <td>${p.CreditoAprobado.Moneda}</td>
+            <td>${p.CreditoAprobado.content}</td>
+            <td>${p.TotalAdeudado}</td>
+            <td>${p.Cuota}</td>
+            <td>${p.EnAtraso}</td>
+            <td>${p.EnLegal}</td>
+            <td>${p.Castigado}</td>
+          </tr>`;
+        });
+        html += "</tbody></table>";
+      }
+
+      if (seccion === "DeudasPorAcreedor") {
+        const acreedores = datosJSON.DeudasPorAcreedor.Acreedor;
+        html += "<table id='tabla'><thead><tr>";
+        html += "<th>Afiliado</th><th>Sector</th><th>Moneda</th><th>Crédito Aprobado</th><th>Total Adeudado</th><th>Cuota</th>";
+        html += "</tr></thead><tbody>";
+        acreedores.forEach(a => {
+          html += `<tr>
+            <td>${a.Afiliado}</td>
+            <td>${a.Sector}</td>
+            <td>${a.CreditoAprobado.Moneda}</td>
+            <td>${a.CreditoAprobado.content}</td>
+            <td>${a.TotalAdeudado}</td>
+            <td>${a.Cuota}</td>
+          </tr>`;
+        });
+        html += "</tbody></table>";
+      }
+
+      if (seccion === "AnalisisCrediticio") {
+  const ac = datosJSON.AnalisisCrediticio;
+
+  // 1. CantidadTotalCuentas
+  html += "<h3>Cantidad Total de Cuentas</h3>";
+  html += "<table id='tabla'><thead><tr><th>Moneda</th><th>Cuentas</th><th>Cerradas</th><th>Abiertas</th><th>Normal</th><th>En Atraso</th><th>Acuerdo Pago</th><th>En Legal</th><th>Castigado</th></tr></thead><tbody>";
+  ac.CantidadTotalCuentas.Moneda.forEach(m => {
+    html += `<tr><td>${m.Id}</td><td>${m.Cuentas}</td><td>${m.Cerradas}</td><td>${m.Abiertas}</td><td>${m.Normal}</td><td>${m.EnAtraso}</td><td>${m.AcuerdoPago}</td><td>${m.EnLegal}</td><td>${m.Castigado}</td></tr>`;
+  });
+  html += "</tbody></table>";
+
+  // 2. Análisis de Créditos
+  html += "<h3>Análisis de Créditos</h3>";
+  ac.AnalisisCreditos.Moneda.forEach(m => {
+    html += `<h4>${m.Id}</h4><table id='tabla'><thead><tr><th>Tipo</th><th>Fecha</th><th>Años</th><th>Monto</th></tr></thead><tbody>`;
+    ["MasReciente", "MasAntiguo", "MenorAprobado", "MayorAprobado", "MayorAdeudado"].forEach(clave => {
+      const item = m[clave];
+      html += `<tr><td>${clave}</td><td>${item.Fecha}</td><td>${item.Anos}</td><td>${item.Monto}</td></tr>`;
+    });
+    html += "</tbody></table>";
+  });
+
+  // 3. Análisis de Atrasos
+  html += "<h3>Análisis de Atrasos</h3>";
+  ac.AnalisisAtrasos.Moneda.forEach(m => {
+    html += `<h4>${m.Id}</h4><table id='tabla'><thead><tr><th>Tipo</th><th>Fecha</th><th>Años</th><th>Días Atraso</th><th>Monto</th></tr></thead><tbody>`;
+    ["MasReciente", "MasAntiguo", "MayorMontoAtraso"].forEach(clave => {
+      const item = m[clave];
+      html += `<tr><td>${clave}</td><td>${item.Fecha}</td><td>${item.Anos}</td><td>${item.DiasAtraso}</td><td>${item.Monto}</td></tr>`;
+    });
+    html += "</tbody></table>";
+  });
+
+  // 4. Peor Atraso
+  html += "<h3>Peor Atraso</h3>";
+  html += "<table id='tabla'><thead><tr><th>Moneda</th><th>Fecha</th><th>Años</th><th>Días Atraso</th><th>Producto</th><th>Crédito Aprobado</th><th>Monto Atraso</th></tr></thead><tbody>";
+  ac.PeorAtraso.Moneda.forEach(p => {
+    html += `<tr><td>${p.Id}</td><td>${p.Fecha}</td><td>${p.Anos}</td><td>${p.DiasAtraso}</td><td>${p.Producto}</td><td>${p.CreditoAprobado}</td><td>${p.MontoAtraso}</td></tr>`;
+  });
+  html += "</tbody></table>";
+
+  // 5. Análisis de Tarjeta de Crédito
+  html += "<h3>Análisis Tarjeta de Crédito</h3>";
+  const tc = ac.AnalisisTarjetaCredito;
+  html += "<table id='tabla'><thead><tr><th>Concepto</th><th>RD$</th><th>US$</th></tr></thead><tbody>";
+  html += `<tr><td>Prom. Cuota</td><td>${tc.AvgMandatorioCuota_DO}</td><td>${tc.AvgMandatorioCuota_US}</td></tr>`;
+  html += `<tr><td>Mayor Monto</td><td>${tc.MayorMontoTC_DO}</td><td>${tc.MayorMontoTC_US}</td></tr>`;
+  html += "</tbody></table>";
+}
+
+      if (seccion === "DesgloseCreditos") {
+        const productos = datosJSON.DesgloseCreditos.Producto;
+        productos.forEach(p => {
+          html += `<h3>${p.Id}</h3><table id='tabla'><thead><tr>`;
+          html += "<th>Afiliado</th><th>Moneda</th><th>Crédito Aprobado</th><th>Total Adeudado</th><th>Cuota</th><th>Estado</th>";
+          html += "</tr></thead><tbody>";
+          p.Cuenta.forEach(c => {
+            html += `<tr>
+              <td>${c.Afiliado}</td>
+              <td>${c.Moneda.Des_Moneda}</td>
+              <td>${c.CreditoAprobado}</td>
+              <td>${c.TotalAdeudado}</td>
+              <td>${c.Cuota}</td>
+              <td>${c.EstatusUltimo}</td>
+            </tr>`;
+          });
+          html += "</tbody></table>";
+        });
+      }
+
+      contenedor.innerHTML = html;
+    }
+
+    function exportarExcel() {
+      const tabla = document.getElementById("tabla");
+      if (!tabla) {
+        alert("Primero selecciona una sección con tabla para exportar.");
+        return;
+      }
+      const wb = XLSX.utils.table_to_book(tabla, { sheet: "Datos" });
+      XLSX.writeFile(wb, "reporte_exportado.xlsx");
+    }
+
+    function exportarTodo() {
+  const wb = XLSX.utils.book_new();
+
+  // 1. Datos personales
+  const individuo = datosJSON.Individuo;
+  const datosPersonales = Object.entries(individuo).map(([clave, valor]) => ({ Campo: clave, Valor: valor }));
+  const ws1 = XLSX.utils.json_to_sheet(datosPersonales);
+  XLSX.utils.book_append_sheet(wb, ws1, "Datos Personales");
+
+  // 2. Deudas por producto
+  const productos = datosJSON.DeudasPorProducto.Producto.map(p => ({
+    Nombre: p.Nombre,
+    Moneda: p.CreditoAprobado.Moneda,
+    CreditoAprobado: p.CreditoAprobado.content,
+    TotalAdeudado: p.TotalAdeudado,
+    Cuota: p.Cuota,
+    EnAtraso: p.EnAtraso,
+    EnLegal: p.EnLegal,
+    Castigado: p.Castigado
+  }));
+  const ws2 = XLSX.utils.json_to_sheet(productos);
+  XLSX.utils.book_append_sheet(wb, ws2, "Deudas Producto");
+
+  // 3. Deudas por acreedor
+  const acreedores = datosJSON.DeudasPorAcreedor.Acreedor.map(a => ({
+    Afiliado: a.Afiliado,
+    Sector: a.Sector,
+    Moneda: a.CreditoAprobado.Moneda,
+    CreditoAprobado: a.CreditoAprobado.content,
+    TotalAdeudado: a.TotalAdeudado,
+    Cuota: a.Cuota
+  }));
+  const ws3 = XLSX.utils.json_to_sheet(acreedores);
+  XLSX.utils.book_append_sheet(wb, ws3, "Deudas Acreedor");
+
+  // 4. Análisis de tarjetas
+  const atc = datosJSON.AnalisisCrediticio.AnalisisTarjetaCredito;
+  const tarjeta = [
+    { Concepto: "Prom. Cuota", RD$: atc.AvgMandatorioCuota_DO, US$: atc.AvgMandatorioCuota_US },
+    { Concepto: "Mayor Monto", RD$: atc.MayorMontoTC_DO, US$: atc.MayorMontoTC_US }
+  ];
+  const ws4 = XLSX.utils.json_to_sheet(tarjeta);
+  XLSX.utils.book_append_sheet(wb, ws4, "Tarjetas Crédito");
+
+  // 5. Peor Atraso
+  const atrasos = datosJSON.AnalisisCrediticio.PeorAtraso.Moneda.map(p => ({
+    Moneda: p.Id,
+    Fecha: p.Fecha,
+    Años: p.Anos,
+    DíasAtraso: p.DiasAtraso,
+    Producto: p.Producto,
+    CreditoAprobado: p.CreditoAprobado,
+    MontoAtraso: p.MontoAtraso
+  }));
+  const ws5 = XLSX.utils.json_to_sheet(atrasos);
+  XLSX.utils.book_append_sheet(wb, ws5, "Peor Atraso");
+
+  // 6. Desglose Créditos (solo resumen)
+  const desglose = [];
+  datosJSON.DesgloseCreditos.Producto.forEach(p => {
+    p.Cuenta.forEach(c => {
+      desglose.push({
+        Producto: p.Id,
+        Afiliado: c.Afiliado,
+        Moneda: c.Moneda.Des_Moneda,
+        CreditoAprobado: c.CreditoAprobado,
+        TotalAdeudado: c.TotalAdeudado,
+        Cuota: c.Cuota,
+        Estado: c.EstatusUltimo
+      });
+    });
+  });
+  const ws6 = XLSX.utils.json_to_sheet(desglose);
+  XLSX.utils.book_append_sheet(wb, ws6, "Desglose Créditos");
+  // 7. Cantidad total de cuentas por moneda
+  const cantidadCuentas = datosJSON.AnalisisCrediticio.CantidadTotalCuentas.Moneda.map(m => ({
+    Moneda: m.Id,
+    Cuentas: m.Cuentas,
+    Cerradas: m.Cerradas,
+    Abiertas: m.Abiertas,
+    Normal: m.Normal,
+    EnAtraso: m.EnAtraso,
+    AcuerdoPago: m.AcuerdoPago,
+    EnLegal: m.EnLegal,
+    Castigado: m.Castigado
+  }));
+  const ws7 = XLSX.utils.json_to_sheet(cantidadCuentas);
+  XLSX.utils.book_append_sheet(wb, ws7, "Cuentas por Moneda");
+
+  // 8. Análisis de Créditos por moneda
+  const analisisCreditos = [];
+  datosJSON.AnalisisCrediticio.AnalisisCreditos.Moneda.forEach(m => {
+    ["MasReciente", "MasAntiguo", "MenorAprobado", "MayorAprobado", "MayorAdeudado"].forEach(tipo => {
+      const item = m[tipo];
+      analisisCreditos.push({
+        Moneda: m.Id,
+        Tipo: tipo,
+        Fecha: item.Fecha,
+        Años: item.Anos,
+        Monto: item.Monto
+      });
+    });
+  });
+  const ws8 = XLSX.utils.json_to_sheet(analisisCreditos);
+  XLSX.utils.book_append_sheet(wb, ws8, "Análisis Créditos");
+
+  // 9. Análisis de Atrasos por moneda
+  const analisisAtrasos = [];
+  datosJSON.AnalisisCrediticio.AnalisisAtrasos.Moneda.forEach(m => {
+    ["MasReciente", "MasAntiguo", "MayorMontoAtraso"].forEach(tipo => {
+      const item = m[tipo];
+      analisisAtrasos.push({
+        Moneda: m.Id,
+        Tipo: tipo,
+        Fecha: item.Fecha,
+        Años: item.Anos,
+        DíasAtraso: item.DiasAtraso,
+        Monto: item.Monto
+      });
+    });
+  });
+  const ws9 = XLSX.utils.json_to_sheet(analisisAtrasos);
+  XLSX.utils.book_append_sheet(wb, ws9, "Análisis Atrasos");
+
+  // 10. Historial de Pagos por Cuenta
+  const historial = [];
+  datosJSON.DesgloseCreditos.Producto.forEach(p => {
+    p.Cuenta.forEach(c => {
+      if (!c.HistorialPago) return;
+      for (let key in c.HistorialPago) {
+        const m = c.HistorialPago[key];
+        historial.push({
+          Producto: p.Id,
+          Afiliado: c.Afiliado,
+          Moneda: c.Moneda.Des_Moneda,
+          Mes: m.F,
+          Estado: m.content,
+          PDV: m.PDV || ""
+        });
+      }
+    });
+  });
+  const ws10 = XLSX.utils.json_to_sheet(historial);
+  XLSX.utils.book_append_sheet(wb, ws10, "Historial de Pagos");
+
+  // Guardar archivo
+  XLSX.writeFile(wb, "reporte_completo.xlsx");
+}
+
+function exportarPDF() {
+  const doc = new window.jspdf.jsPDF();
+  const date = new Date().toLocaleDateString();
+  const lineSpacing = 10;
+  let y = 20;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.text("Informe de Reporte Crediticio", 105, y, { align: "center" });
+  y += 10;
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "normal");
+  doc.text(`Fecha de generación: ${date}`, 105, y, { align: "center" });
+
+  y += 20;
+
+  const addSectionTitle = (title) => {
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text(title, 15, y);
+    y += lineSpacing;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+  };
+
+  const addKeyValuePairs = (obj) => {
+    for (const [key, value] of Object.entries(obj)) {
+      const val = typeof value === "object" ? JSON.stringify(value) : value;
+      doc.text(`${key}: ${val}`, 15, y);
+      y += lineSpacing;
+      if (y > 270) {
+        doc.addPage(); y = 20;
+      }
+    }
+  };
+
+  const addTableFromArray = (array, columns) => {
+    const header = columns.map(c => c.header);
+    const rows = array.map(row => columns.map(c => row[c.key]));
+    doc.autoTable({
+      head: [header],
+      body: rows,
+      startY: y,
+      margin: { top: 10 },
+      theme: 'striped',
+      styles: { fontSize: 9 },
+      didDrawPage: (data) => { y = data.cursor.y + 10; },
+    });
+    y += 10;
+  };
+
+  // Sección 1: Datos personales
+  addSectionTitle("1. Datos Personales");
+  addKeyValuePairs(datosJSON.Individuo);
+
+  // Sección 2: Deudas por Producto
+  doc.addPage(); y = 20;
+  addSectionTitle("2. Deudas por Producto");
+  addTableFromArray(datosJSON.DeudasPorProducto.Producto.map(p => ({
+    nombre: p.Nombre,
+    moneda: p.CreditoAprobado.Moneda,
+    aprobado: p.CreditoAprobado.content,
+    adeudado: p.TotalAdeudado,
+    cuota: p.Cuota,
+    atraso: p.EnAtraso,
+    legal: p.EnLegal,
+    castigado: p.Castigado
+  })), [
+    { key: "nombre", header: "Nombre" },
+    { key: "moneda", header: "Moneda" },
+    { key: "aprobado", header: "Crédito" },
+    { key: "adeudado", header: "Adeudado" },
+    { key: "cuota", header: "Cuota" },
+    { key: "atraso", header: "Atraso" },
+    { key: "legal", header: "Legal" },
+    { key: "castigado", header: "Castigado" }
+  ]);
+
+  // Sección 3: Deudas por Acreedor
+  doc.addPage(); y = 20;
+  addSectionTitle("3. Deudas por Acreedor");
+  addTableFromArray(datosJSON.DeudasPorAcreedor.Acreedor.map(a => ({
+    afiliado: a.Afiliado,
+    sector: a.Sector,
+    moneda: a.CreditoAprobado.Moneda,
+    aprobado: a.CreditoAprobado.content,
+    adeudado: a.TotalAdeudado,
+    cuota: a.Cuota
+  })), [
+    { key: "afiliado", header: "Afiliado" },
+    { key: "sector", header: "Sector" },
+    { key: "moneda", header: "Moneda" },
+    { key: "aprobado", header: "Crédito" },
+    { key: "adeudado", header: "Adeudado" },
+    { key: "cuota", header: "Cuota" }
+  ]);
+
+  doc.addPage(); y = 20;
+addSectionTitle("4. Análisis Crediticio - Cuentas por Moneda");
+
+addTableFromArray(datosJSON.AnalisisCrediticio.CantidadTotalCuentas.Moneda.map(m => ({
+  moneda: m.Id,
+  cuentas: m.Cuentas,
+  abiertas: m.Abiertas,
+  cerradas: m.Cerradas,
+  normal: m.Normal,
+  atraso: m.EnAtraso,
+  legal: m.EnLegal,
+  castigado: m.Castigado
+})), [
+  { key: "moneda", header: "Moneda" },
+  { key: "cuentas", header: "Cuentas" },
+  { key: "abiertas", header: "Abiertas" },
+  { key: "cerradas", header: "Cerradas" },
+  { key: "normal", header: "Normal" },
+  { key: "atraso", header: "Atraso" },
+  { key: "legal", header: "Legal" },
+  { key: "castigado", header: "Castigado" }
+]);
+
+addSectionTitle("Análisis de Créditos");
+datosJSON.AnalisisCrediticio.AnalisisCreditos.Moneda.forEach(m => {
+  addSectionTitle(`Moneda: ${m.Id}`);
+  addTableFromArray([
+    { tipo: "Más reciente", ...m.MasReciente },
+    { tipo: "Más antiguo", ...m.MasAntiguo },
+    { tipo: "Menor aprobado", ...m.MenorAprobado },
+    { tipo: "Mayor aprobado", ...m.MayorAprobado },
+    { tipo: "Mayor adeudado", ...m.MayorAdeudado }
+  ], [
+    { key: "tipo", header: "Tipo" },
+    { key: "Fecha", header: "Fecha" },
+    { key: "Anos", header: "Años" },
+    { key: "Monto", header: "Monto" }
+  ]);
+});
+
+addSectionTitle("Análisis de Atrasos");
+datosJSON.AnalisisCrediticio.AnalisisAtrasos.Moneda.forEach(m => {
+  addSectionTitle(`Moneda: ${m.Id}`);
+  addTableFromArray([
+    { tipo: "Más reciente", ...m.MasReciente },
+    { tipo: "Más antiguo", ...m.MasAntiguo },
+    { tipo: "Mayor monto atraso", ...m.MayorMontoAtraso }
+  ], [
+    { key: "tipo", header: "Tipo" },
+    { key: "Fecha", header: "Fecha" },
+    { key: "Anos", header: "Años" },
+    { key: "DiasAtraso", header: "Días Atraso" },
+    { key: "Monto", header: "Monto" }
+  ]);
+});
+
+addSectionTitle("Peor Atraso");
+addTableFromArray(datosJSON.AnalisisCrediticio.PeorAtraso.Moneda.map(m => ({
+  moneda: m.Id,
+  fecha: m.Fecha,
+  anos: m.Anos,
+  dias: m.DiasAtraso,
+  producto: m.Producto,
+  credito: m.CreditoAprobado,
+  atraso: m.MontoAtraso
+})), [
+  { key: "moneda", header: "Moneda" },
+  { key: "fecha", header: "Fecha" },
+  { key: "anos", header: "Años" },
+  { key: "dias", header: "Días Atraso" },
+  { key: "producto", header: "Producto" },
+  { key: "credito", header: "Crédito" },
+  { key: "atraso", header: "Monto Atraso" }
+]);
+
+addSectionTitle("Tarjetas de Crédito");
+const atc = datosJSON.AnalisisCrediticio.AnalisisTarjetaCredito;
+addTableFromArray([
+  { concepto: "Prom. Cuota", rd: atc.AvgMandatorioCuota_DO, usd: atc.AvgMandatorioCuota_US },
+  { concepto: "Mayor Monto", rd: atc.MayorMontoTC_DO, usd: atc.MayorMontoTC_US }
+], [
+  { key: "concepto", header: "Concepto" },
+  { key: "rd", header: "RD$" },
+  { key: "usd", header: "US$" }
+]);
+
+doc.addPage(); y = 20;
+addSectionTitle("5. Desglose de Créditos por Producto");
+
+datosJSON.DesgloseCreditos.Producto.forEach(p => {
+  addSectionTitle(`Producto: ${p.Id}`);
+  const cuentas = p.Cuenta.map(c => ({
+    afiliado: c.Afiliado,
+    moneda: c.Moneda.Des_Moneda,
+    aprobado: c.CreditoAprobado,
+    adeudado: c.TotalAdeudado,
+    cuota: c.Cuota,
+    estado: c.EstatusUltimo
+  }));
+  addTableFromArray(cuentas, [
+    { key: "afiliado", header: "Afiliado" },
+    { key: "moneda", header: "Moneda" },
+    { key: "aprobado", header: "Crédito" },
+    { key: "adeudado", header: "Adeudado" },
+    { key: "cuota", header: "Cuota" },
+    { key: "estado", header: "Estado" }
+  ]);
+});
+
+  // Puedes seguir agregando más secciones aquí...
+
+  // Guardar PDF
+  doc.save("reporte_crediticio.pdf");
+}
+  </script>
+
+</body>
+</html>
