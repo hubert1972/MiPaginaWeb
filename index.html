@@ -42,6 +42,18 @@
   <h2>PARA VER LOS JSON DE EQUIFAX</h2>
 
   <label for="seccion">Selecciona la sección a mostrar:</label>
+
+// Nuevo
+  <h3>Subir archivo JSON</h3>
+  <input type="file" id="fileInput" accept=".json">
+  <input type="text" id="fileName" placeholder="Nombre personalizado">
+  <button onclick="cargarArchivo()">Cargar archivo</button>
+
+  <h4>Archivos cargados:</h4>
+  <ul id="listaArchivos"></ul>
+
+// Termina lo Nuevo
+
   <select id="seccion">
     <option value="">-- Selecciona una sección --</option>
     <option value="Individuo">Datos personales</option>
@@ -57,7 +69,7 @@
     <button onclick="exportarPDF()">Exportar TODO a PDF</button>
     <div id="contenido"></div>
   <script>
-    let datosJSON = {};
+    
 
     // Carga del archivo JSON
     fetch("05-06-2025-04-50-15-pm_00111774295.json")
@@ -66,11 +78,61 @@
         datosJSON = data;
         document.getElementById("seccion").addEventListener("change", mostrarSeccion);
       });
+// Este codigo es nuevo
+let archivos = {}; // Almacenará todos los JSON cargados
+let datosJSON = {}; // Será el archivo actualmente activo
+
+  function cargarArchivo() {
+  const input = document.getElementById('fileInput');
+  const nombreInput = document.getElementById('fileName');
+  const archivo = input.files[0];
+  const nombre = nombreInput.value.trim() || archivo.name;
+
+  if (!archivo || !archivo.name.endsWith('.json')) {
+    alert('Selecciona un archivo JSON válido.');
+    return;
+  }
+
+  const lector = new FileReader();
+  lector.onload = function (e) {
+    try {
+      const contenido = JSON.parse(e.target.result);
+      archivos[nombre] = contenido;
+      actualizarListaArchivos();
+      input.value = '';
+      nombreInput.value = '';
+    } catch (err) {
+      alert('El archivo no contiene JSON válido.');
+    }
+  };
+  lector.readAsText(archivo);
+}
+
+function actualizarListaArchivos() {
+  const lista = document.getElementById('listaArchivos');
+  lista.innerHTML = '';
+  for (const nombre in archivos) {
+    const li = document.createElement('li');
+    li.textContent = nombre;
+    li.style.cursor = 'pointer';
+    li.onclick = () => seleccionarArchivo(nombre);
+    lista.appendChild(li);
+  }
+}
+
+function seleccionarArchivo(nombre) {
+  datosJSON = archivos[nombre];
+  document.getElementById('seccion').value = '';
+  document.getElementById('contenido').innerHTML = `<p><strong>Archivo seleccionado:</strong> ${nombre}</p>`;
+}
+
+// Aqui termina el codigo nuevo
 
     function mostrarSeccion() {
       const seccion = document.getElementById("seccion").value;
       const contenedor = document.getElementById("contenido");
-      contenedor.innerHTML = "";
+      const ac = datosJSON.AnalisisCrediticio;
+      // contenedor.innerHTML = "";
 
       if (!seccion) return;
 
